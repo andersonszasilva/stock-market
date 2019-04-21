@@ -16,6 +16,7 @@ import org.junit.Test;
 
 import br.com.adesozasilva.investingapi.model.Negociacao;
 import br.com.adesozasilva.investingapi.model.NegociacaoBuilder;
+import br.com.adesozasilva.investingapi.model.NegociacaoRequest;
 
 /**
  * @author asouzsil
@@ -55,7 +56,6 @@ public class NegociacaoBuilderTest {
 		.adicionaStopGain(precoStopGain)
 		.adicionaStopLoss(precoStopLoss)
 		.build();
-		
 		
 		BigDecimal total = new BigDecimal(preco).multiply(BigDecimal.valueOf(quantidade));
 		assertEquals(papel, negociacao.getPapel());
