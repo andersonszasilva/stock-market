@@ -2,7 +2,7 @@ version: '3.1'
 services:
   mongo:
     image: mongo
-    container_name: investingapi-mongo
+    container_name: stock-market-mongo
     ports:
       - 27017:27017
     restart: always

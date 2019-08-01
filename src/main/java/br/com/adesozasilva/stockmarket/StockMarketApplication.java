@@ -1,13 +1,13 @@
-package br.com.adesozasilva.investingapi;
+package br.com.adesozasilva.stockmarket;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class InvestingapiApplication {
+public class StockMarketApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(InvestingapiApplication.class, args);
+		SpringApplication.run(StockMarketApplication.class, args);
 	}
 
 }

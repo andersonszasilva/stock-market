@@ -10,7 +10,7 @@
 		<relativePath /> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>br.com.adesozasilva</groupId>
-	<artifactId>investingapi</artifactId>
+	<artifactId>stock-market</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<name>investingapi</name>
 	<description>Demo project for Spring Boot</description>
