@@ -1,31 +1,26 @@
 package br.com.adesozasilva.stockmarket.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
-import br.com.adesozasilva.stockmarket.repositories.StockTimeSeriesRepository;
+import br.com.adesozasilva.stockmarket.entities.StockData;
+import br.com.adesozasilva.stockmarket.service.StockTimeSeriesService;
 
 @RestController
 @RequestMapping(value = "/stock-market")
 public class StockMarketController {
 	
     @Autowired
-	private StockTimeSeriesRepository stockTimeSeriesRepository;
+	private StockTimeSeriesService stockTimeSeriesService;
 
-	@GetMapping(value = "/stock-time-series")
-	public String stockTimeSeries() {
-		String symbol = "OIBR4.SA";
-		String function = "TIME_SERIES_DAILY";
-		String outputsize = "full";
-		String apikey = "D458C4GCSPW172RG";
-		String stockTimeSeries = stockTimeSeriesRepository
-				.timeSeriesDaily(symbol, 
-						function, 
-						outputsize, 
-						apikey);
-		return stockTimeSeries;
+	@GetMapping(value = "/stock-time-series", produces = MediaType.APPLICATION_JSON_VALUE)
+	public StockData stockTimeSeries(@RequestParam("symbol") String symbol) {
+		StockData stockData = stockTimeSeriesService.timeSeriesDaily(symbol);
+		return stockData;
 		
 	}
 
